@@ -1,0 +1,305 @@
+/*ヘッダー*/
+
+header{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+.fa-egg{
+  color: orange;
+}
+.title{
+  font-size: 3rem;
+    letter-spacing: 0.1em;
+    font-family: "Nico Moji";
+}
+.modal-headline {
+  position: relative;
+  padding: 1rem;
+  text-align: center;
+  font-style: italic;
+    color: orange;
+}
+
+.modal-headline:before {
+  position: absolute;
+  bottom: 0px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 3px;
+  content: '';
+  border-radius: 3px;
+  background: #000;
+
+}
+/*.sideと.mainを包むクラス*/
+.wrapper{
+  width: 900px; /*全体の幅*/
+  margin:0 auto; /*中央に寄せる*/
+}
+/*左側 幅を200ぐらいに想定*/
+.side{
+  border:4px outset #ccc; /*周りの線 線の種類、太さ、色を指定できます*/
+  float: left; /*要素が浮いて左へ寄ります*/
+  height: 390px; /*中身の要素の合計を指定しました。*/
+  width: 220px; /*幅を想定した200からborderの分引きました 200-1-1=198*/
+  margin-right: 10px;
+  overflow-y: scroll;/*サイドバーにコンテンツが入り切らない場合スクロール出来るようにする*/
+}
+/*スクロールバー全体*/
+.side::-webkit-scrollbar {
+  width: 5px;
+}
+
+/*スクロールバーの軌道*/
+.side::-webkit-scrollbar-track {
+border-radius: 5px;
+box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);
+}
+
+/*スクロールバーの動く部分*/
+.side::-webkit-scrollbar-thumb {
+background-color: orange;
+border-radius: 5px;
+box-shadow:0 0 0 1px rgba(255, 255, 255, .3);
+}
+.side :first-child{
+  border-top: none;
+}
+/*左側の中身*/
+ul{
+  list-style: none;
+  padding: inherit;
+}
+.archive-inner{
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
+  padding-top: 20px;
+  font-family: "M PLUS 1p";
+
+}
+
+.archive-inner img{
+  transition-duration: 0.5s;
+}
+.archive-inner:hover img{
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
+.archive-inner p{
+  margin: 10px 0 0 0;
+  padding-bottom: 10px;
+}
+/*右側 幅を700くらいに想定*/
+.main{
+  border:4px outset #ccc;
+  height: 390px; /*左のコンテンツに高さを合わせました*/
+  float: left;
+  width: 649px; /*左側にmargin-right:10px;を指定しているのでその分引きます 700-10-1-1*/
+  margin-bottom: 10px;
+  position: relative;/*timer-wrapperを中央に配置 初期位置を指定している*/
+}
+/*timerの中のpクラス*/
+.timer-wrapper{
+  width: 352px;
+  position: absolute;/*mainの中でどこに配置するか*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);/*左上が真ん中に配置されているので調整する*/
+}
+.timer{
+  text-align: center;
+  background: black;
+  color:orange;
+  font-family: 'Montserrat', sans-serif;
+}
+.timer-info{
+  font-size: 1.1rem;
+  text-align: center;
+  font-family: "M PLUS 1p";
+}
+.timer p{
+  font-size: 40px;
+  color:FBAA31;
+  border: 4px inset #ccc;
+}
+/*ボタン*/
+.button-wrapper{
+  text-align: center;
+}
+.button {
+  display : inline-block;
+  border-radius: 100%;          /* 角丸       */
+  font-size : 14pt;        /* 文字サイズ */
+  text-align: center;      /* 文字位置   */
+  cursor : pointer;     /* カーソル   */
+  padding : 12px 20px;   /* 余白       */
+  background : #595959;     /* 背景色     */
+  color : #ffffff;     /* 文字色     */
+  line-height : 1em;         /* 1行の高さ  */
+  opacity : 1;           /* 透明度     */
+  transition : .3s;         /* なめらか変化 */
+  box-shadow : 2px 2px 5px #666666;  /* 影の設定 */
+  margin-right: 10px;
+}
+.button-wrapper :last-child{
+  margin-right: 0px;
+}
+.button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  opacity       : 0.8;         /* カーソル時透明度 */
+}
+/*ポップアップボタン*/
+.popup-button {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 11pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 32px;   /* 余白       */
+  background    : #00b300;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 2px 2px 5px #666666;  /* 影の設定 */
+  border        : 2px solid #00b300;    /* 枠の指定 */
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: "M PLUS 1p";
+}
+.popup-button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #00b300;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+/*モーダル*/
+.popup > div{
+  text-align: center;
+}
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: .6s;
+}
+.popup.is-show {
+  opacity: 1;
+  visibility: visible;
+}
+.popup-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 80%;
+  max-width: 600px;
+  padding: 50px;
+  background-color: #fff;
+  z-index: 2;
+  font-family: "M PLUS 1p";
+}
+.popup-inner img {
+  width: 100%;
+}
+.close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+.close-btn i {
+  font-size: 20px;
+  color: #333;
+}
+.black-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.8);
+  z-index: 1;
+  cursor: pointer;
+}
+footer{
+  clear: both;/*回り込みの解除です。*/
+}
+/*レスポンシブ*/
+/*iphone5s横にしたら2カラムにする*/
+@media screen and (max-width: 567px) {
+  p{
+    font-size: 0.8rem;
+  }
+  .title{
+    font-size: 2rem;
+  }
+	.wrapper{
+    width: auto;
+  }
+  .side{
+    margin-right: 0;
+    overflow-x: scroll;
+    white-space: nowrap;
+    float: none;
+    height: auto;
+    width: auto;
+    border: none;
+    overflow-y: visible;
+  }
+  .side::-webkit-scrollbar{
+    height: 5px;
+  }
+  ul{
+    float: none;
+    margin: 0;
+  }
+  .archive-inner{
+    display: inline-block;
+    width: 120px;
+  }
+  .main{
+    height: 260px;
+    width: auto;
+    float: none;
+  }
+  .timer-wrapper{
+    width: 90%;
+  }
+  .main{
+    border: none;
+  }
+  .button{
+    font-size: 12pt;
+    padding: 12px 15px;
+  }
+  .popup-button{
+    margin-bottom: 0;
+  }
+  .archive-inner img{
+    width: 80px;
+    height: 80px;
+  }
+}
+/*スマホ横*/
+@media screen and (max-width: 896px) { 
+  .archive-inner img{
+    width: 90px;
+    height: 90px;
+  }
+  .side{
+    width: 180px;
+  }
+  .main{
+    width: 590px;
+  }
+}
