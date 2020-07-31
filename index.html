@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="app.css">
+  <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h2 class="title"><span><i class="fas fa-egg"></i></span>ゆでたまごタイマー</h2>
+    <!--モーダルを開くボタン-->
+    <button class="popup-button" id="js-show-popup">使い方</button>
+  </header>
+  <div class="wrapper">
+    <section class="side">
+      <ul class="archive">
+        <!-- jsで操作するためidを付けます -->
+        <li id="verySoft" class="archive-inner">
+          <img src="img/IMG_5448 2.jpg" width="100px" height="100px" alt="半熟(柔らかめ)">
+          <p>半熟（とろとろ）</p>
+        </li>
+        <li id="soft" class="archive-inner">
+          <img src="img/IMG_1379.jpg" width="100px" height="100px" alt="半熟(硬め)">
+          <p>半熟（固まりかけ）</p>
+        </li>
+        <li id="moist" class="archive-inner">
+          <img src="img/IMG_1792.jpg" width="100px" height="100px" alt="しっとり">
+          <p>しっとり</p>
+        </li>
+        <li id="hard" class="archive-inner">
+          <img src="img/IMG_3397.jpg" width="100px" height="100px" alt="硬め">
+          <p>固茹で</p>
+        </li>
+
+      </ul>
+
+    </section>
+    <section class="main">
+      
+      <div class="timer-wrapper">
+        <p id="info-message" class="timer-info">
+          仕上がり具合を一覧から選択してください。
+        </p>
+        <div class="timer" id="timer">
+        <p id="time">
+          <span id="min">0</span>  m
+          <span>:</span>
+          <span id="sec">0</span>  s
+        </p>
+      </div>
+      <div class="button-wrapper">
+        <input type="button" class="button" id="start-btn" value="START">
+        <input type="button" class="button" id="stop-btn" value="STOP" disabled>
+        <input type="button" class="button" id="reset-btn" value="RESET">
+      </div>
+      </div>
+      
+
+    </section>
+  </div>
+  <footer></footer>
+  <!--モーダル-->
+  <div class="popup" id="js-popup">
+    <div class="popup-inner">
+      <div class="close-btn" id="js-close-btn"><i class="fas fa-times"></i></div>
+      <h3 class="modal-headline"><span>STEP1</span></h3><p>沸騰したお湯を用意してください。</p>
+      <h3 class="modal-headline"><span>STEP2</span></h3><p>左の欄からゆで卵の固さを選んでください。</p>
+      <h3 class="modal-headline"><span>STEP3</span></h3><p>冷蔵庫から卵を取り出してそっと沸騰しているお湯の中へ入れます。<br>
+        タイマーのSTARTボタンを押します。
+      </p>
+      <h3 class="modal-headline"><span>STEP4</span></h3><p>タイマーが鳴ったらお湯から冷水へ卵を移します。</p>
+      
+    </div>
+    <div class="black-background" id="js-black-bg"></div>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
