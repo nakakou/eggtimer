@@ -64,6 +64,9 @@ background-color: orange;
 border-radius: 5px;
 box-shadow:0 0 0 1px rgba(255, 255, 255, .3);
 }
+.scroll-wrap::-webkit-scrollbar-track-piece {
+  background: #efefef;
+}
 .side :first-child{
   border-top: none;
 }
@@ -255,7 +258,7 @@ ul{
     height: auto;
     width: 100%;
     border: none;
-    overflow-y: visible;
+    overflow-x: auto;
   }
   .side::-webkit-scrollbar{
     height: 5px;
