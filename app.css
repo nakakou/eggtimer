@@ -259,6 +259,7 @@ ul{
     width: 100%;
     border: none;
     overflow-x: auto;
+	  -webkit-overflow-scrolling: touch;
   }
   .side::-webkit-scrollbar{
     height: 5px;
