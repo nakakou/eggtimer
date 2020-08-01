@@ -231,18 +231,18 @@ ul{
   z-index: 1;
   cursor: pointer;
 }
-footer{
+.wrapper::after{
   clear: both;/*回り込みの解除です。*/
 }
 /*レスポンシブ*/
 /*iphone5s横にしたら2カラムにする*/
-@media screen and (max-width: 567px) {
+@media screen and (max-width: 480px) {
   p{
     font-size: 0.8rem;
   }
-  .title{
-    font-size: 2rem;
-  }
+  .title {
+    font-size: 1.2rem;
+}
 	.wrapper{
     width: auto;
   }
@@ -252,7 +252,7 @@ footer{
     white-space: nowrap;
     float: none;
     height: auto;
-    width: auto;
+    width: 100%;
     border: none;
     overflow-y: visible;
   }
@@ -273,21 +273,35 @@ footer{
     float: none;
   }
   .timer-wrapper{
-    width: 90%;
+    width: 100%;
   }
   .main{
     border: none;
   }
   .button{
-    font-size: 12pt;
+    font-size: 10pt;
     padding: 12px 15px;
   }
   .popup-button{
     margin-bottom: 0;
   }
   .archive-inner img{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
+  }
+  .timer-info{
+    font-size: 1rem;
+  }
+  .timer p{
+    font-size: 25px;
+  }
+  .popup{
+    height: 120%;
+  }
+  .popup-inner{
+    width: 70%;
+    overflow: scroll;
+    height: 550px;
   }
 }
 /*スマホ横*/
@@ -303,3 +317,5 @@ footer{
     width: 590px;
   }
 }
+
+/*タブレット縦*/
