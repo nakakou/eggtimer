@@ -70,11 +70,11 @@ function setInfoTime(){
 }
 //スタートを押したとき
 startTime.onclick = function() {
+  console.log(countTime);
   //countTimeが残っている時
   if(countTime >= 1){
     infoMessage.textContent = cookingMessage;
     counter = setInterval(count, 1000);
-    toggle();
   }else{
     //countTimeの中身が設定されていない時
     infoMessage.style.color = "red"
@@ -113,7 +113,6 @@ function count() {
   
 }
 stopTime.onclick = function(){
-  toggle();
   stop();//タイマーの音を止める
   clearInterval(counter);
 }
