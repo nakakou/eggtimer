@@ -39,7 +39,8 @@ header{
 }
 /*左側 幅を200ぐらいに想定*/
 .side{
-  border:4px outset #ccc; /*周りの線 線の種類、太さ、色を指定できます*/
+  border:4px solid #ccc; /*周りの線 線の種類、太さ、色を指定できます*/
+  border-radius: 10px;
   float: left; /*要素が浮いて左へ寄ります*/
   height: 390px; /*中身の要素の合計を指定しました。*/
   width: 220px; /*幅を想定した200からborderの分引きました 200-1-1=198*/
@@ -93,7 +94,8 @@ ul{
 }
 /*右側 幅を700くらいに想定*/
 .main{
-  border:4px outset #ccc;
+  border:4px solid #ccc; /*周りの線 線の種類、太さ、色を指定できます*/
+  border-radius: 10px;
   height: 390px; /*左のコンテンツに高さを合わせました*/
   float: left;
   width: 649px; /*左側にmargin-right:10px;を指定しているのでその分引きます 700-10-1-1*/
@@ -235,7 +237,6 @@ ul{
   clear: both;/*回り込みの解除です。*/
 }
 /*レスポンシブ*/
-/*iphone5s横にしたら2カラムにする*/
 @media screen and (max-width: 480px) {
   p{
     font-size: 0.8rem;
@@ -296,26 +297,97 @@ ul{
     font-size: 25px;
   }
   .popup{
-    height: 120%;
+    height: 100vh;/*高さを画面いっぱいに*/
   }
   .popup-inner{
-    width: 70%;
-    overflow: scroll;
-    height: 500px;
+    width: 65%;
+    overflow: scroll; /*コンテンツが画面に収まらない場合スクロール*/
+    height: 80%;
   }
 }
 /*スマホ横*/
-@media screen and (min-width: 568px) and (max-width: 896px) { 
+@media screen and (min-width: 481px) and (max-width: 896px) { 
+  header{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .title{
+    font-size: 1.5rem;
+  }
+  .wrapper{
+    width: 100%;
+  }
+
   .archive-inner img{
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
+  }
+  .archive-inner p{
+    font-size: 0.9rem;
   }
   .side{
-    width: 180px;
+    height: 180px;
+    width: 23%;
+    box-sizing: border-box;
   }
   .main{
-    width: 590px;
+    height: 180px;
+    width: 75%;
+    box-sizing: border-box;
+  }
+  .button{
+    font-size: 12pt;
+    padding: 12px 20px;
+  }
+  .popup-button{
+    padding: 9px 24px;
+  }
+  .popup-inner{
+    overflow-y: scroll;
+    height: 60%;
+  }
+  #timer{
+    margin: 10px 0px;
+  }
+  .timer-info{
+    font-size: 1rem;
+  }
+  .timer p{
+    font-size: 32px;
+    margin: 0;
   }
 }
 
 /*タブレット縦*/
+/*iPad 縦向き*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) {
+ header{
+  margin-top: 50px;
+ }
+ .title{
+   font-size: 3rem;
+ }
+ .side{
+   height: 300px;
+ }
+ .main{
+   height: 300px;
+ }
+ #timer{
+   margin: 20px 0;
+ }
+ .button{
+  font-size: 15pt;
+  padding: 12px 23px;
+ }
+ .archive-inner img{
+   width: 90px;
+   height: 90px;
+ }
+ .archive-inner p {
+   font-size: 1.0rem;
+ }
+ .popup-button{
+   padding: 12px 32px;
+ }
+}
