@@ -258,7 +258,6 @@ ul{
     height: auto;
     width: 100%;
     border: none;
-    overflow-x: auto;
   }
   .side::-webkit-scrollbar{
     height: 5px;
@@ -333,19 +332,6 @@ ul{
     width: 23%;
     box-sizing: border-box;
       overflow-x: scroll;
-  }
-  .side::-webkit-scrollbar{
-    height: 5px;
-  }
-  .side::-webkit-scrollbar-track{
-    margin: 0 2px;
-      background: #ccc;
-      border-radius: 5px;
-  }
-  .side::-webkit-scrollbar-thumb{
-    border-radius: 5px;
-      background: #666;
-
   }
   .main{
     height: 180px;

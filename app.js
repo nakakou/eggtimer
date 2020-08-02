@@ -82,15 +82,6 @@ startTime.onclick = function() {
   }
   
 };
-function toggle() {
-  if( startTime.disabled) {
-    startTime.disabled = false;
-    stopTime.disabled = true;
-  } else {
-    startTime.disabled = true;
-    stopTime.disabled = false;
-  }
-}
 //選択ボーダーの初期化
 function iniBorder(ele){
   for(i=0;i<multipleSelect.length;i++){
